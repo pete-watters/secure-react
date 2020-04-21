@@ -30,3 +30,4 @@ class Eval extends Component {
   }
 
 }
+export default Eval;
