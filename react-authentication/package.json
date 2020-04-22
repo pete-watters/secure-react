@@ -11,7 +11,7 @@
   "author": "Peter Watters",
   "license": "ISC",
   "dependencies": {
-    "auth0-js": "^9.4.1",
+    "auth0-js": "^9.13.2",
     "history": "^4.7.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
