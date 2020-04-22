@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+const privateVar = 'Pete';
 
 class Eval extends Component {
   constructor(){
     super();
 
     this.state = {
-      expression: ''
+      expression: '',
+      result: ''
     }
   }
 
@@ -15,6 +17,10 @@ class Eval extends Component {
     const result = eval(this.state.expression);
     this.setState({ result });
   }
+  safEval = () => {
+    const func = Function(`return (${this.state.expression})`);
+    this.setState({ result: func() });
+  }
 
   render(){
     return(
@@ -23,7 +29,9 @@ class Eval extends Component {
         <input onChange={this.updateExpression} />
         <br />
         <button onClick={this.vulEval}>Vulnerable Eval</button>
+        <button onClick={this.safEval}>Safe Eval</button>
         <br />
+        {/*  test input with - alert(privateVar) */}
         <h4>Result: {this.state.result}</h4>
       </div>
     );
