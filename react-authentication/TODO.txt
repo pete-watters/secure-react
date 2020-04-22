@@ -1,0 +1,1 @@
+Look more into Auth0 profile. That may be enough to help manage what I need to
